@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
-import { getContext } from "smart-context";
+import React, { useContext } from 'react';
+import { getContext } from 'smart-context';
 
 /**
  * Context available in props
  */
 const MyAwesomeComponent = () => {
   const { state: postState, actions: postActions } = useContext(
-    getContext("post")
+    getContext('post')
   );
 
   /** Async action */
@@ -28,8 +28,11 @@ const MyAwesomeComponent = () => {
 
   return (
     <div className="container">
-      <h2>Post Context</h2>
-      <p>Deep state object. Loads list of posts via async action.</p>
+      <h2>Context2</h2>
+      <p>
+        Deep state object. Loads list of posts via async action. ImmerJS for
+        immutability.
+      </p>
       {postState.loading ? (
         <p>Loading...</p>
       ) : (
