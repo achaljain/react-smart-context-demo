@@ -1,3 +1,3 @@
-# react-upkevo
+# react-smart-context-demo
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-upkevo)
+[Demo](https://react-smart-context-demo.stackblitz.io/)
