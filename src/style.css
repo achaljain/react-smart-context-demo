@@ -1,0 +1,65 @@
+body {
+  font-family: Lato;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 50px;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  margin: 0.5rem;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  flex-basis: 50%;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.container h2 {
+  text-align: center;
+}
+
+.container button {
+  background: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0.5rem;
+  width: 100%;
+  margin-top: 0.75rem;
+  cursor: pointer;
+}
+
+.container button:hover,
+.container button:active {
+  color: #ffffff;
+  background-color: #282c34;
+}
+
+@media screen and (min-width: 500px) {
+  .demo {
+    flex-direction: row;
+  }
+}
