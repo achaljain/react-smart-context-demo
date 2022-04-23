@@ -1,8 +1,13 @@
 /** This is deep nested store using async data and immer js*/
 import produce from 'immer';
 
+const updateWithImmer = (cb) => (state) => {
+  const newSt = produce(state, cb);
+  return newSt;
+};
+
 const getData = () => {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     const postData = ['Post 1', 'Post 2'];
     setTimeout(() => {
       resolve(postData);
@@ -25,7 +30,7 @@ const actionsConfig = {
   setPost: async () => {
     // Simulate Async
     const data = await getData();
-    return state => {
+    return (state) => {
       return { ...state, post: data, loading: false };
     };
   },
@@ -35,14 +40,11 @@ const actionsConfig = {
    * @returns {function} State transformation function
    */
   addPost: () => {
-    return baseState => {
-      const newSt = produce(baseState, draftState => {
-        draftState.post.push('Immer post');
-        draftState.loading = false;
-      });
-      return newSt;
-    };
-  }
+    return updateWithImmer((state) => {
+      state.post.push('Immer post');
+      state.loading = false;
+    });
+  },
 };
 
 const displayName = 'post';
@@ -51,7 +53,7 @@ const config = {
   initialState,
   actionsConfig,
   displayName,
-  debug: true
+  debug: true,
 };
 
 export default config;
